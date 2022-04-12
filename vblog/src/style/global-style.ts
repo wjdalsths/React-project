@@ -20,6 +20,9 @@ export const GlobalStyle = createGlobalStyle`
       background: none;
       border: none;
   }
+  label {
+    cursor: pointer;
+  }
   svg{
     margin-right:0.5rem;
   }

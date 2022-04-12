@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../component/Header/Header";
 import WriteBlog from "../component/WriteBlog/WriteBlog";
 
-const Noticeborder = () => {
+const WritePage = () => {
   return (
     <>
       <Header />
@@ -11,4 +11,4 @@ const Noticeborder = () => {
   );
 };
 
-export default Noticeborder;
+export default WritePage;

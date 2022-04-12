@@ -106,42 +106,46 @@ export const ImgBtnWrapper = styled.div`
     display: none;
   }
   label {
+    background-color: #808080;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: bold;
+    width: 6vw;
+    height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5vw;
-    height: 4.5vh;
-    color: #fff;
-    background-color: #495057;
-    font-size: 16px;
-    font-weight: bold;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    box-sizing: border-box;
-    cursor: pointer;
-    &:hover {
-      background-color: #fff;
-      border: 3px solid #495057;
-      color: #495057;
+    border-radius: 5px;
+    /* box-sizing: border-box; */
+    /* transition-property: font-size, width, height;
+    transition-duration: 0.5s; */
+    :hover {
+      /* width: 6.5vw;
+      height: 5.5vh;
+      font-size: 125%; */
+      background-color: skyblue;
     }
   }
 `;
-export const imgbutton = styled.button`
-  background-color: #fa5252;
-  width: 4.5vw;
-  height: 4.5vh;
-  color: #fff;
-  font-size: 18px;
+
+export const delbutton = styled.button`
+  background-color: #808080;
+  color: #ffffff;
+  font-size: 1.15rem;
   font-weight: bold;
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  box-sizing: border-box;
-  cursor: pointer;
-  &:hover {
-    background-color: #fff;
-    border: 3px solid #fa5252;
-    color: #fa5252;
+  width: 6vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  /* box-sizing: border-box; */
+  /* transition-property: font-size, width, height;
+  transition-duration: 0.5s; */
+  :hover {
+    /* width: 7vw;
+    height: 6vh;
+    font-size: 150%; */
+    background-color: red;
   }
 `;

@@ -17,7 +17,7 @@ const WriteBlog = () => {
       // 읽기가 완료되면 아래코드 실행
       const base64 = reader.result;
       if (base64) {
-        setimgBase64(base64.toString()); // 파일base64 상태 업데이트
+        setimgBase64(base64.toString()); // 파일 base64 상태 업데이트
       }
     };
     if (event.target.files[0]) {
@@ -25,6 +25,10 @@ const WriteBlog = () => {
       setimgFile(event.target.files[0]); //파일상태 업데이트
       // setFileImage(URL.createObjectURL(e.target.files[0]));
     }
+  };
+  const deleteFileImage = () => {
+    setimgBase64("");
+    setimgFile(null);
   };
 
   const onChangeTitle = (e: any) => {
@@ -47,7 +51,7 @@ const WriteBlog = () => {
       alert("내용을 입력해주세요.");
     } else {
       axios
-        .post("url", { title: title, body: content })
+        .post("url", { title: title, body: content, img: imgBase64 })
         .then((res) => {
           console.log(res);
         })
@@ -87,7 +91,7 @@ const WriteBlog = () => {
           </S.writeboard>
           <S.imgboard>
             <S.Img>
-              {imgFile ? <img alt="image" src={imgFile} /> : <p>no image</p>}
+              {imgFile ? <img alt="image" src={imgBase64} /> : <p>no image</p>}
             </S.Img>
             <S.ImgBtnWrapper>
               <input
@@ -99,7 +103,7 @@ const WriteBlog = () => {
               />
               <label htmlFor="select">이미지 선택</label>
               {/* <button id="select">이미지 선택</button> */}
-              <S.imgbutton>삭제</S.imgbutton>
+              <S.delbutton onClick={deleteFileImage}>삭제</S.delbutton>
             </S.ImgBtnWrapper>
           </S.imgboard>
         </S.board>

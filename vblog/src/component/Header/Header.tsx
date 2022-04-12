@@ -28,12 +28,14 @@ const Header = () => {
         <S.search>
           <BiSearch />
         </S.search>
-        <Link to="/notice">
+        <Link to="/write">
           <S.newpost>새 글 작성</S.newpost>
         </Link>
         <S.profile>
           <S.profiles>
-            <FaUserCircle />
+            <Link to="/profile">
+              <FaUserCircle />
+            </Link>
             <BsFillCaretDownFill />
           </S.profiles>
         </S.profile>
