@@ -11,6 +11,7 @@
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "axios": "^0.26.1",
+    "cors": "^2.8.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
@@ -46,5 +47,9 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.24"
-  }
+  },
+  "proxy": "http://10.120.74.34:8000",
+  "secure": false,
+  "strict": true,
+  "strictNullChecks": false
 }

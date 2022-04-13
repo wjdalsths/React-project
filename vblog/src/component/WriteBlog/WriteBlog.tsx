@@ -40,9 +40,9 @@ const WriteBlog = () => {
     console.log(e.target.value);
   };
 
-  const onSubmit = (e: any) => {
-    const url = "http";
-    var pattern = /^\s\s*$/;
+  const onSubmit = () => {
+    // const url = "/FBN/CRE/";
+    let pattern = /^\s\s*$/;
     if (title.match(pattern) || title === "") {
       console.log("no title");
       alert("제목을 입력해주세요.");
@@ -51,9 +51,25 @@ const WriteBlog = () => {
       alert("내용을 입력해주세요.");
     } else {
       axios
-        .post("url", { title: title, body: content, img: imgBase64 })
+        .post(
+          "/FBN/CRE/",
+          {
+            title: title,
+            context: content,
+            img1: imgBase64,
+            img2: "",
+            img3: "",
+            img4: "",
+            img5: "",
+            create_user: 1,
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        )
         .then((res) => {
           console.log(res);
+          console.log("성공");
         })
         .catch((error: any) => {
           console.log("error");
@@ -69,27 +85,27 @@ const WriteBlog = () => {
 
   return (
     <>
-      <S.write>
-        <S.board>
-          <S.writeboard>
-            <S.title>
+      <S.Write>
+        <S.Board>
+          <S.Writeboard>
+            <S.Title>
               <S.input
                 type={"text"}
                 value={title}
                 placeholder={"enter title"}
                 onChange={onChangeTitle}
               />
-            </S.title>
-            <S.infobox>
+            </S.Title>
+            <S.Infobox>
               <S.textarea
                 // id=''
                 value={content}
                 onChange={onChangeContent}
                 placeholder="enter content"
               />
-            </S.infobox>
-          </S.writeboard>
-          <S.imgboard>
+            </S.Infobox>
+          </S.Writeboard>
+          <S.Imgboard>
             <S.Img>
               {imgFile ? <img alt="image" src={imgBase64} /> : <p>no image</p>}
             </S.Img>
@@ -103,14 +119,14 @@ const WriteBlog = () => {
               />
               <label htmlFor="select">이미지 선택</label>
               {/* <button id="select">이미지 선택</button> */}
-              <S.delbutton onClick={deleteFileImage}>삭제</S.delbutton>
+              <button onClick={deleteFileImage}>삭제</button>
             </S.ImgBtnWrapper>
-          </S.imgboard>
-        </S.board>
-        <S.subButton type="submit" onClick={onSubmit}>
+          </S.Imgboard>
+        </S.Board>
+        <S.SubButton type="submit" onClick={onSubmit}>
           UpLoad
-        </S.subButton>
-      </S.write>
+        </S.SubButton>
+      </S.Write>
     </>
   );
 };

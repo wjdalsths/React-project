@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
-export const write = styled.div`
+export const Write = styled.div`
   width: 80vw;
   margin: auto;
   /* height: 90vh; */
   display: flex;
   flex-direction: column;
 `;
-export const board = styled.div`
+export const Board = styled.div`
   width: 100%;
   display: flex;
 `;
-export const writeboard = styled.div`
+export const Writeboard = styled.div`
   display: flex;
   flex-direction: column;
   /* background: white; */
@@ -19,7 +19,7 @@ export const writeboard = styled.div`
   margin-top: 4vh;
   /* height: 70vh; */
 `;
-export const title = styled.div`
+export const Title = styled.div`
   width: 90%;
   height: 10vh;
   background: white;
@@ -43,7 +43,7 @@ export const input = styled.input`
     font-size: 3rem;
   }
 `;
-export const infobox = styled.div`
+export const Infobox = styled.div`
   width: 86.6%;
   /* height: 100%; */
 `;
@@ -63,7 +63,7 @@ export const textarea = styled.textarea`
   }
 `;
 
-export const subButton = styled.button`
+export const SubButton = styled.button`
   margin-top: 3.5vh;
   background-color: #dbceff;
   border-radius: 10px;
@@ -71,9 +71,10 @@ export const subButton = styled.button`
   border: none;
   height: 5vh;
   text-align: center;
+  box-shadow: rgb(0 0 0 / 25%) 0px 4px 10px;
 `;
 
-export const imgboard = styled.div`
+export const Imgboard = styled.div`
   margin-top: 4vh;
 `;
 
@@ -85,6 +86,7 @@ export const Img = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: rgb(0 0 0 / 25%) 0px 4px 10px;
   /* overflow: hidden; */
   img {
     width: 100%;
@@ -108,7 +110,8 @@ export const ImgBtnWrapper = styled.div`
   label {
     background-color: #808080;
     color: #ffffff;
-    font-size: 1.15rem;
+    padding: 0;
+    font-size: 1.1rem;
     font-weight: bold;
     width: 6vw;
     height: 5vh;
@@ -116,6 +119,7 @@ export const ImgBtnWrapper = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    box-sizing: border-box;
     /* box-sizing: border-box; */
     /* transition-property: font-size, width, height;
     transition-duration: 0.5s; */
@@ -124,28 +128,31 @@ export const ImgBtnWrapper = styled.div`
       height: 5.5vh;
       font-size: 125%; */
       background-color: skyblue;
+      border: 3px solid black;
     }
   }
-`;
-
-export const delbutton = styled.button`
-  background-color: #808080;
-  color: #ffffff;
-  font-size: 1.15rem;
-  font-weight: bold;
-  width: 6vw;
-  height: 5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  /* box-sizing: border-box; */
-  /* transition-property: font-size, width, height;
-  transition-duration: 0.5s; */
-  :hover {
-    /* width: 7vw;
-    height: 6vh;
-    font-size: 150%; */
-    background-color: red;
+  button {
+    background-color: #808080;
+    color: #ffffff;
+    padding: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 6vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* box-sizing: border-box; */
+    /* transition-property: font-size, width, height;
+    transition-duration: 0.5s; */
+    :hover {
+      /* width: 7vw;
+      height: 6vh;
+      font-size: 150%; */
+      background-color: red;
+      border: 3px solid black;
+    }
   }
 `;
