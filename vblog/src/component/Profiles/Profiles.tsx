@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import * as S from "./Styled";
 
 const Profiles = () => {
-  const [blog, setBlog] = useState([]);
+  const [profile, setProfile] = useState([]);
   useEffect(() => {
-    const url = "https://jsonplaceholder.typicode.com/posts";
+    const url = "";
     axios
       .get(url)
-      .then((data) => {
-        console.log(data);
-        setBlog(data.data);
+      .then((res) => {
+        console.log(res);
+        setProfile(res.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log("error");
       });
   }, []);
 
@@ -22,18 +22,46 @@ const Profiles = () => {
       <S.Container>
         <S.Profile>
           <a>
-            <img src="" alt="" width="128px" height="128px" />
+            <img src="img/tkwls.png" alt="" width="128px" height="128px" />
           </a>
           <S.InformationWrap>
             <S.Name>name</S.Name>
             <S.Description>description</S.Description>
           </S.InformationWrap>
-          <S.Line />
         </S.Profile>
-        <S.Myblog>
-          <S.Filter></S.Filter>
-          <S.Myblog></S.Myblog>
-        </S.Myblog>
+        <S.Line />
+        <S.MyblogWrapper>
+          <S.Introduce>
+            <div>
+              tttttttttttttttteeeeeeeeeeeeeeeexxxxxxxxxxxxxxxtttttttttttttttttttttttttteeeeeeeeeeeeeeeexxxxxxxxxxxxxxxtttttttttt
+              tttttttttttttttteeeeeeeeeeeeeeeexxxxxxxxxxxxxxxtttttttttttttttttttttttttteeeeeeeeeeeeeeeexxxxxxxxxxxxxxxtttttttttt
+              tttttttttttttttteeeeeeeeeeeeeeeexxxxxxxxxxxxxxxtttttttttttttttttttttttttteeeeeeeeeeeeeeeexxxxxxxxxxxxxxxtttttttttt
+              tttttttttttttttteeeeeeeeeeeeeeeexxxxxxxxxxxxxxxtttttttttt
+            </div>
+          </S.Introduce>
+          <S.Line />
+
+          <S.Myblog>
+            {/* {profile.map((user: any) => ( */}
+            {/*key={user.id}*/}
+            <S.Blogitem>
+              <S.Blogimg>
+                <img src="" alt="" />
+              </S.Blogimg>
+              <S.Blogwrapper>
+                <S.Blogtitle>
+                  {/* {user.title} */}
+                  <p>titletitletitle</p>
+                </S.Blogtitle>
+                <S.Blogcontent>
+                  {/* {user.content} */}
+                  <p>ccccccooooooooonnnnnnnnnnttttttteeeeeeennnnnntttttttttt</p>
+                </S.Blogcontent>
+              </S.Blogwrapper>
+            </S.Blogitem>
+            {/* ))} */}
+          </S.Myblog>
+        </S.MyblogWrapper>
       </S.Container>
     </>
   );
