@@ -48,7 +48,7 @@
   "devDependencies": {
     "@types/styled-components": "^5.1.24"
   },
-  "proxy": "http://10.120.74.34:8000",
+  "proxy": "",
   "secure": false,
   "strict": true,
   "strictNullChecks": false
